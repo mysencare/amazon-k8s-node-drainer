@@ -63,12 +63,12 @@ Resources:
             Variables:
               CLUSTER_NAME: !Ref EksCluster
           VpcConfig:
-            SecurityGroupIds: # eks cluster SG
-              - CONFIGURE
-            SubnetIds: # eks cluster Subnets
-              - CONFIGURE
-              - CONFIGURE
-              - CONFIGURE
+            SecurityGroupIds:
+              - sg-058561998c59cdef4 # eks cluster SG
+            SubnetIds:
+              - subnet-0c663ccbdb0fc04c2
+              - subnet-0b22bd8c430d0c341
+              - subnet-0de2d7c1db0f86cf2
           Role: !GetAtt DrainerRole.Arn
           Events:
             TerminationEvent:
