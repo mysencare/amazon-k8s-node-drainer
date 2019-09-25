@@ -96,10 +96,14 @@ sam deploy --template-file packaged.yaml --stack-name ${stack} --capabilities CA
 
 print_title "Configuring Kubernetes Permissions"
 kubectl apply -R -f k8s_rbac/
-ROLE=$(aws cloudformation describe-stacks --stack-name eks-qa-sidekiq-drainer | jq '.Stacks[0].Outputs[0].OutputValue' | tr -d '"')
+ROLE=$(aws cloudformation describe-stacks --stack-name ${stack} | jq '.Stacks[0].Outputs[0].OutputValue' | tr -d '"')
 echo
-echo "[INFO] Please, add the following role to 'aws-auth' configMap in your K8s cluster and kube-system namespace"
+echo "[INFO] Please, add the following role to 'aws-auth' configMap in your K8s cluster and kube-system namespace with user 'lambda'"
 echo
 log "${GREEN}${ROLE}${RESET}"
 echo
+echo "Example:"
+echo
+log "${GREEN}- rolearn: ${ROLE}"
+log "username: lambda${RESET}"
 echo "Bye ;)"
