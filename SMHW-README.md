@@ -45,7 +45,7 @@
 - API worker nodes
 
 ```bash
-./build_deploy.sh -b satchel-k8s-node-drainer -a satchel-eks-prod-api -c satchel-eks-prod -s eks-qa-api-drainer
+./build_deploy.sh -b satchel-k8s-node-drainer -a satchel-eks-prod-api -c satchel-eks-prod -s eks-prod-api-drainer
 ```
 
 - Sidekiq worker nodes
@@ -57,13 +57,13 @@
 - Nginx worker nodes
 
 ```bash
-./build_deploy.sh -b satchel-k8s-node-drainer -a satchel-eks-prod-nginx -c satchel-eks-prod -s eks-qa-nginx-drainer
+./build_deploy.sh -b satchel-k8s-node-drainer -a satchel-eks-prod-nginx -c satchel-eks-prod -s eks-prod-nginx-drainer
 ```
 
 - Instrumentation worker nodes
 
 ```bash
-./build_deploy.sh -b satchel-k8s-node-drainer -a satchel-eks-prod-instrumentation -c satchel-eks-prod -s eks-qa-instrumentation-drainer
+./build_deploy.sh -b satchel-k8s-node-drainer -a satchel-eks-prod-instrumentation -c satchel-eks-prod -s eks-prod-instrumentation-drainer
 ```
 
 ### Kubernetes Permissions
